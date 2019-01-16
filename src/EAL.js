@@ -189,7 +189,7 @@ class EAL {
                 api_key: this.apiKey
             },
             auth: {
-                user: this.user,
+                username: this.user,
                 password: this.password
             }
         });
