@@ -23,7 +23,7 @@ Use it on your project:
 const EventManager = new EAL({
     user: 'YOUR_EAL_USERNAME',
     password: 'YOUR_EAL_PASSWORD',
-    apiToken: 'YOUR_EAL_API_TOKEN'
+    apiKey: 'YOUR_EAL_API_KEY'
 });
 
 // Adding an event
