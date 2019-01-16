@@ -8,7 +8,7 @@ import {generateToken} from './utils';
 class EAL {
     constructor ({user, password, apiKey}) {
         if (!user || !password || !apiKey) {
-            throw Exception('The credentials provided are not valid. Please provide user, password and apiKey to connect.');
+            throw 'The credentials provided are not valid. Please provide user, password and apiKey to connect.';
         }
 
         this.user = user;
@@ -27,7 +27,7 @@ class EAL {
                         this.sessionToken = generateToken();
                     })
                     .catch(() => {
-                        throw Exception('Cannot store sessionToken on local storage.');
+                        throw 'Cannot store sessionToken on local storage.';
                     });
             });
         
@@ -40,7 +40,7 @@ class EAL {
                 this.sessionToken = generateToken();
             })
             .catch(() => {
-                throw Exception('Cannot store sessionToken on local storage.');
+                throw 'Cannot store sessionToken on local storage.';
             });
     }
 
@@ -81,7 +81,7 @@ class EAL {
         }
 
         if (!validParams || !validActions) {
-            throw Exception(errors);
+            throw errors.join('\n');
         }
     }
 
