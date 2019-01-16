@@ -34,13 +34,23 @@ class EAL {
         return this;
     }
 
+    resetSessionToken () {
+        AsyncStorage.setItem('eal_token', this.sessionToken)
+            .then(() => {
+                this.sessionToken = generateToken();
+            })
+            .catch(() => {
+                throw Exception('Cannot store sessionToken on local storage.');
+            });
+    }
+
     checkParams (params, uniqueAction) {
         const {user, business, action, actions} = params;
         const requiredPaths = [
             ...user ? ['user.id', 'user.username', 'user.email'] : [],
             ...business ? ['business.id', 'business.name'] : [],
             ...uniqueAction ? ['action', 'action.datetime', 'action.name'] : [],
-            ...(action && action.object) ? ['action.object.id', 'action.object.before', 'action.object.after'] : []
+            ...(action && action.object) ? ['action.object.id', 'action.object.className'] : []
         ];
         let validParams = true;
         let validActions = true;
@@ -118,7 +128,8 @@ class EAL {
         const {
             id: objectId,
             before: objectBefore,
-            after: objectAfter
+            after: objectAfter,
+            className: objectClassName
         } = object;
 
         return axios({
@@ -153,7 +164,8 @@ class EAL {
                         object: {
                             id: objectId,
                             before: objectBefore,
-                            after: objectAfter
+                            after: objectAfter,
+                            class_name: objectClassName
                         }
                     }
                 } : {
@@ -165,8 +177,9 @@ class EAL {
                         ...action.object ? {
                             object: {
                                 id: object.id,
+                                class_name: object.className,
                                 before: object.before,
-                                after: object.after
+                                after: object.after,
                             }
                         } : {}
                     }))
