@@ -55,7 +55,7 @@ EventManager.addEvent({
             id,
             username,                                                   
             email,
-            firstName,                                                   //optional
+            firstName,                                                  //optional
             lastName,                                                   //optional
             phone,                                                      //optional
             extraFields: {},                                            //optional
@@ -92,7 +92,7 @@ EventManager.addEvent({
             id,
             username,                                                   
             email,
-            firstName,                                                   //optional
+            firstName,                                                  //optional
             lastName,                                                   //optional
             phone,                                                      //optional
             extraFields: {},                                            //optional
