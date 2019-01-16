@@ -13,7 +13,9 @@ Library to interact with EAL API from any JS based project.
 
 Import the package from your JS project:
 
-`import EAL from 'eal-js'`
+```javascript
+import EAL from 'eal-js'
+```
 
 Use it on your project:
 
