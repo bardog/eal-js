@@ -1,6 +1,6 @@
 {
   "name": "bardog-eal-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Library to interact with EAL API from any JS based project",
   "main": "./src/EAL.js",
   "scripts": {

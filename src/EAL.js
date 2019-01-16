@@ -89,14 +89,14 @@ class EAL {
         const uniqueAction = false;
 
         this.checkParams(params, uniqueAction);
-        this.addEventGeneric(params, uniqueAction);
+        return this.addEventGeneric(params, uniqueAction);
     }
 
     addEvent (params) {
         const uniqueAction = true;
 
         this.checkParams(params, uniqueAction);
-        this.addEventGeneric(params, uniqueAction);
+        return this.addEventGeneric(params, uniqueAction);
     }
 
     addEventGeneric (params, uniqueAction) {
