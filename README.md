@@ -4,17 +4,17 @@ Library to interact with EAL API from any JS based project.
 ## Installation
 
 ### With NPM
-`npm install --save @bardogtech/eal-js`
+`npm install --save bardog-eal-js`
 
 ### With YARN
-`yarn add @bardogtech/eal-js`
+`yarn add bardog-eal-js`
 
 ## First steps
 
 Import the package from your JS project:
 
 ```javascript
-import EAL from '@bardogtech/eal-js'
+import EAL from 'bardog-eal-js'
 ```
 
 Use it on your project:
