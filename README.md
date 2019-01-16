@@ -1,3 +1,5 @@
+ ![](https://img.shields.io/npm/v/bardog-eal-js.svg)
+
 # EAL JS
 Library to interact with EAL API from any JS based project.
 
