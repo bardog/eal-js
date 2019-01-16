@@ -2,7 +2,7 @@
   "name": "eal-js",
   "version": "0.1.0",
   "description": "Library to interact with EAL API from any JS based project",
-  "main": "index.js",
+  "main": "./src/EAL.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/bardog/eal-js/issues"
   },
-  "homepage": "https://github.com/bardog/eal-js#readme"
+  "homepage": "https://github.com/bardog/eal-js#readme",
+  "dependencies": {
+    "@callstack/async-storage": "^1.1.0",
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
+    "lodash.get": "^4.4.2",
+    "lodash.random": "^3.2.0"
+  }
 }
