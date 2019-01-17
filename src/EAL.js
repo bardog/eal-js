@@ -19,29 +19,18 @@ class EAL {
         
         AsyncStorage.getItem('eal_token')
             .then(sessionToken => {
-                this.sessionToken = sessionToken;
-            })
-            .catch(() => {
-                AsyncStorage.setItem('eal_token', this.sessionToken)
-                    .then(() => {
-                        this.sessionToken = generateToken();
-                    })
-                    .catch(() => {
-                        throw 'Cannot store sessionToken on local storage.';
-                    });
+                if (sessionToken)
+                    this.sessionToken = sessionToken;
+                else
+                    this.resetSessionToken();
             });
         
         return this;
     }
 
     resetSessionToken () {
-        AsyncStorage.setItem('eal_token', this.sessionToken)
-            .then(() => {
-                this.sessionToken = generateToken();
-            })
-            .catch(() => {
-                throw 'Cannot store sessionToken on local storage.';
-            });
+        this.sessionToken = generateToken();
+        AsyncStorage.setItem('eal_token', this.sessionToken);
     }
 
     checkParams (params, uniqueAction) {
