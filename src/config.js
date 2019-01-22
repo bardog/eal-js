@@ -1,7 +1,7 @@
-export const baseUrl = 'https://demo3959531.mockable.io/api/'
+export const baseUrl = 'https://bardog-eal-backend.appspot.com/api'
 export const endpoints = {
     addEvent: '/events',
-    addEvents: '/events/bulk'
+    addEvents: '/events'
 };
 
 export default {
