@@ -17,15 +17,15 @@ class EAL {
         this.baseUrl = baseUrl;
         this.sessionToken = '';
         
-        AsyncStorage.getItem('eal_token')
+        return AsyncStorage.getItem('eal_token')
             .then(sessionToken => {
                 if (sessionToken)
                     this.sessionToken = sessionToken;
                 else
                     this.resetSessionToken();
+                
+                return this;
             });
-        
-        return this;
     }
 
     resetSessionToken () {
