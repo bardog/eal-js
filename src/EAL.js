@@ -150,12 +150,12 @@ class EAL {
                         datetime: actionDatetime,
                         category: actionCategory,
                         extra_fields: actionExtraFields,
-                        object: {
+                        object: Object.keys(object).length ? {
                             id: objectId,
                             before: objectBefore,
                             after: objectAfter,
                             class_name: objectClassName
-                        }
+                        } : undefined
                     }
                 } : {
                     actions: actions.map(action => ({
