@@ -126,7 +126,7 @@ class EAL {
             method: 'POST',
             baseURL: this.baseUrl,
             data: {
-                user: {
+                user: Object.keys(user).length ? {
                     id: userId,
                     username: userName,
                     email: userEmail,
@@ -134,15 +134,15 @@ class EAL {
                     last_name: userLastName,
                     phone: userPhone,
                     extra_fields: userExtraFields
-                },
-                business: {
+                } : undefined,
+                business: Object.keys(business).length ? {
                     id: businessId,
                     name: businessName,
                     email: businessEmail,
                     phone: businessPhone,
                     website: businessWebsite,
                     extra_fields: businessExtraFields
-                },
+                } : undefined,
                 session_token: this.sessionToken,
                 ...uniqueAction ? {
                     action: {
