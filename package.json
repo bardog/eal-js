@@ -1,8 +1,8 @@
 {
   "name": "bardog-eal-js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Library to interact with EAL API from any JS based project",
-  "main": "./src/EAL.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
