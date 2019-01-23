@@ -24,8 +24,7 @@ Use it on your project:
 ```javascript
 const EventManager = new EAL({
     user: 'YOUR_EAL_USERNAME',
-    password: 'YOUR_EAL_PASSWORD',
-    apiKey: 'YOUR_EAL_API_KEY'
+    password: 'YOUR_EAL_PASSWORD'
 });
 
 // Adding an event

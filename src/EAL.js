@@ -6,14 +6,13 @@ import {baseUrl, endpoints} from './config';
 import {generateToken} from './utils';
 
 class EAL {
-    constructor ({user, password, apiKey}) {
-        if (!user || !password || !apiKey) {
-            throw 'The credentials provided are not valid. Please provide user, password and apiKey to connect.';
+    constructor ({user, password}) {
+        if (!user || !password) {
+            throw 'The credentials provided are not valid. Please provide user and password to connect.';
         }
 
         this.user = user;
         this.password = password;
-        this.apiKey = apiKey;
         this.baseUrl = baseUrl;
         this.sessionToken = '';
         
@@ -173,9 +172,6 @@ class EAL {
                         } : {}
                     }))
                 }
-            },
-            params: {
-                api_key: this.apiKey
             },
             auth: {
                 username: this.user,
