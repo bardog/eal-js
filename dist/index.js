@@ -37,7 +37,8 @@ var EAL = function () {
         var _this = this;
 
         var user = _ref.user,
-            password = _ref.password;
+            password = _ref.password,
+            ealUrl = _ref.ealUrl;
 
         _classCallCheck(this, EAL);
 
@@ -47,7 +48,7 @@ var EAL = function () {
 
         this.user = user;
         this.password = password;
-        this.baseUrl = _config.baseUrl;
+        this.baseUrl = ealUrl || _config.baseUrl;
         this.sessionToken = '';
 
         return _asyncStorage2.default.getItem('eal_token').then(function (sessionToken) {

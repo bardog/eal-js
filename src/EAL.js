@@ -6,14 +6,14 @@ import {baseUrl, endpoints} from './config';
 import {generateToken} from './utils';
 
 class EAL {
-    constructor ({user, password}) {
+    constructor ({user, password, ealUrl}) {
         if (!user || !password) {
             throw 'The credentials provided are not valid. Please provide user and password to connect.';
         }
 
         this.user = user;
         this.password = password;
-        this.baseUrl = baseUrl;
+        this.baseUrl = ealUrl || baseUrl;
         this.sessionToken = '';
         
         return AsyncStorage.getItem('eal_token')
